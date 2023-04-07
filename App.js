@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View,  Button,} from 'react-native';
+import { StyleSheet, Text, View, Button, } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import ImageViewer from './components/ImageViewer';
-import { Video } from 'expo-av';
+
+
 
 
 const PlaceholderImage = 'https://reactnative.dev/img/tiny_logo.png';
@@ -20,6 +21,7 @@ export default function App() {
 
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
+      console.log(result.assets[0].uri);
     } else {
       alert("You did not select any image.");
     }
